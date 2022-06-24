@@ -1,2 +1,1 @@
-Goodbye
-lihihu
+Super jaime le chocolat !
