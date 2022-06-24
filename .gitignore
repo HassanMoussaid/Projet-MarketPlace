@@ -15,3 +15,5 @@ target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
 target/TestMavenWebapp.war
 target/TestMavenWebapp/WEB-INF/classes/com/m2i/controleur/Controleur.class
 .classpath
+target/classes/com/m2i/controleur/Controleur.class
+target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
