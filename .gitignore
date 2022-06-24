@@ -17,3 +17,5 @@ target/TestMavenWebapp/WEB-INF/classes/com/m2i/controleur/Controleur.class
 .classpath
 target/classes/com/m2i/controleur/Controleur.class
 target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+target/classes/com/m2i/controleur/Controleur.class
+target/m2e-wtp/web-resources/META-INF/maven/com.m2i.projectMavenWebapp/TestMavenWebapp/pom.properties
