@@ -11,9 +11,15 @@ public class Controleur {
 	
 	
 	@RequestMapping("/Inscription")
-	public String afficherformulaire() {
+	public String inscription() {
 		
 		return"inscription";
+	}
+	
+	@RequestMapping("/login")
+	public String formulaireLogin() {
+		
+		return"login";
 	}
 	
 
