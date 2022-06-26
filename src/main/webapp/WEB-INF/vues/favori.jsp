@@ -129,9 +129,12 @@
 						<p>Titre</p>
 						<p>Description</p>
 					</div>
-					<div class="col-5">
+					<div class="col-4">
 						<p>Vendeur</p>
 						<p>Prix</p>
+					</div>
+					<div class="col-1">
+						<button type="button" class="btn btn-info">Delete</button>
 					</div>
 				</div>
 			</a>
