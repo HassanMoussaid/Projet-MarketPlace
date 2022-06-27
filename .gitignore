@@ -45,3 +45,11 @@ target/classes/com/m2i/controleur/Controleur.class
 target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 target/classes/com/m2i/controleur/Controleur.class
+*.MF
+*.properties
+*.MF
+*.class
+*.properties
+target/TestMavenWebapp/WEB-INF/classes/com/m2i/controleur/Controleur.class
+target/TestMavenWebapp.war
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
