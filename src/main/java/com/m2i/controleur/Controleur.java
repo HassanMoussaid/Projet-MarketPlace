@@ -13,7 +13,7 @@ public class Controleur {
 	@RequestMapping("/Inscription")
 	public String inscription() {
 		
-		return"inscription";
+		return"AjouterObjet";
 	}
 	
 	@RequestMapping("/login")
