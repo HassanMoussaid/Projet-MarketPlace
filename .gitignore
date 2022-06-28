@@ -58,3 +58,6 @@ target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
 target/classes/com/m2i/controleur/Controleur.class
 target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
 target/m2e-wtp/web-resources/META-INF/maven/com.m2i.projectMavenWebapp/TestMavenWebapp/pom.properties
+target/classes/com/m2i/controleur/Controleur.class
+target/m2e-wtp/web-resources/META-INF/MANIFEST.MF
+target/m2e-wtp/web-resources/META-INF/maven/com.m2i.projectMavenWebapp/TestMavenWebapp/pom.properties
