@@ -36,28 +36,41 @@
 		<div class="row">
 			<div class="col-12">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-					<a class="navbar-brand" href="#">Accueil</a>
+
+					<a class="navbar-brand" href="accueil">Accueil</a>
 					<button class="navbar-toggler" type="button"
 						data-toggle="collapse" data-target="#navbarColor01"
 						aria-controls="navbarColor01" aria-expanded="false"
 						aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
-					<button>
+
+					</button>
 
 					<div class="collapse navbar-collapse" id="navbarColor01">
 						<ul class="navbar-nav mr-auto">
-							<li class="nav-item"><a class="nav-link" href="#">En
-									vente <span class="sr-only">(current)</span>
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Favori
-									<span class="sr-only">(current)</span>
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#"> <span
-									class="sr-only">(current)</span>Messagerie
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#"> <span
-									class="sr-only">(current)</span>Mes Objets
-							</a></li>
+								<form action="accueil" method="post">
+								<li class="nav-item"><input type="submit" value="En vente">
+								</li>
+							</form>
+
+							<form action="favori" method="post">
+								<li class="nav-item"><input type="submit" value="Favori">
+								</li>
+							</form>
+							
+							<form action="Messagerie" method="post">
+								<li class="nav-item"><input type="submit" value="Messagerie">
+								</li>
+							</form>
+								<form action="ajouterObjet" method="post">
+								<li class="nav-item"><input type="submit" value="Mes Objets">
+								</li>
+							</form>
+
+							<form action="mettreEnvente" method="post">
+								<li class="nav-item"><input type="submit" value="Mettre en vente">
+								</li>
+							</form>
 						</ul>
 						<div class="form-inline my-2 my-lg-0">
 
@@ -72,8 +85,9 @@
 
 									<div class="dropdown-menu" aria-labelledby="btnGroupDrop1"
 										style="">
-										<a class="dropdown-item" href="#">Paramètre</a> 
-										<a class="dropdown-item" href="#">Deconnexion</a>
+
+										<a class="dropdown-item" href="ModifierInfosUser">Paramètre</a> <a
+											class="dropdown-item" href="login">Deconnexion</a>
 									</div>
 								</div>
 							</div>
@@ -86,6 +100,7 @@
 
 		<form:form action="ajoutObjet" method="post"
 			modelAttribute="objetvente">
+
 			<fieldset style="margin: auto; width: 700px; margin-top: 50px;">
 				<legend>
 					<strong>Déposer une annonce</strong>
@@ -94,17 +109,31 @@
 					<label for="titre">Quel est le titre de l'annonce ?</label> 
 					<br>
 					<form:input type="text" class="form-control" id="titre" aria-describedby="titreHelp" placeholder="Enter un titre" path="nom" />
+
 				</div>
 
 				<div class="form-group">
 					<label for="exampleTextarea">Description</label>
-					<form:input type="textarea" class="form-control" id="description" rows="3" path="description" />
+
+					<form:textarea class="form-control" id="description" rows="3"
+						path="description"></form:textarea>
 				</div>
 
 				<div class="form-group">
-					<label for="prix">Prix de l'objet : </label> 
+					<label for="titre">Prix</label>
 					<br>
-					<form:input type="number" class="form-control" id="prix"  path="prix" />
+					<form:input type="number" class="form-control" id="prix"
+						aria-describedby="titreHelp" placeholder="Enter prix"
+						path="prix"></form:input>
+				</div>
+				
+					<div class="form-group">
+					<form:select class="custom-select" path="idCategorie">
+						<form:option selected="" value="">Catégorie</form:option>
+						<form:option value="1">One</form:option>
+						<form:option value="2">Two</form:option>
+						<form:option value="3">Three</form:option>
+					</form:select>
 				</div>
 
 				<div class="form-group">
@@ -112,8 +141,8 @@
 					<label for="files">Ajouter les photos de votre objet.
 						Selectionnez 1 ou plusieurs</label><br>
 					<form:input id="files" type="file" multiple="multiple"
-						accept="image/jpeg, image/png, image/jpg" path="photos" />
-					<output id="result">
+						accept="image/jpeg, image/png, image/jpg" path="photos"></form:input>
+					<output id="result"></output>
 
 						<script type="text/javascript">
 				document.querySelector("#files").addEventListener("change", (e) => { //ajouter un evenemet sur input file

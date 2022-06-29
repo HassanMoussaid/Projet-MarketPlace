@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
@@ -15,7 +16,7 @@
 		<div class="row">
 			<div class="col-12">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-					<a class="navbar-brand" href="#">Accueil</a>
+					<a class="navbar-brand" href="accueil">Accueil</a>
 					<form:button class="navbar-toggler" type="button" data-toggle="collapse"
 						data-target="#navbarColor01" aria-controls="navbarColor01"
 						aria-expanded="false" aria-label="Toggle navigation">
@@ -24,18 +25,30 @@
 
 					<div class="collapse navbar-collapse" id="navbarColor01">
 						<ul class="navbar-nav mr-auto">
-							<li class="nav-item"><a class="nav-link" href="#">En
-									vente <span class="sr-only">(current)</span>
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Favori
-									<span class="sr-only">(current)</span>
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#"> <span
-									class="sr-only">(current)</span>Messagerie
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#"> <span
-									class="sr-only">(current)</span>Mes Objets
-							</a></li>
+							<form action="accueil" method="post">
+								<li class="nav-item">
+								<input type="submit" value="En vente">
+								</li>
+							</form>
+
+							<form action="favori" method="post">
+								<li class="nav-item"><input type="submit" value="Favori">
+								</li>
+							</form>
+							
+							<form action="Messagerie" method="post">
+								<li class="nav-item"><input type="submit" value="Messagerie">
+								</li>
+							</form>
+								<form action="ajouterObjet" method="post">
+								<li class="nav-item"><input type="submit" value="Mes Objets">
+								</li>
+							</form>
+
+							<form action="mettreEnvente" method="post">
+								<li class="nav-item"><input type="submit" value="Mettre en vente">
+								</li>
+							</form>
 						</ul>
 						<div class="form-inline my-2 my-lg-0">
 
@@ -50,8 +63,8 @@
 
 									<div class="dropdown-menu" aria-labelledby="btnGroupDrop1"
 										style="">
-										<a class="dropdown-item" href="#">Paramètre</a> <a
-											class="dropdown-item" href="#">Deconnexion</a>
+										<a class="dropdown-item" href="ModifierInfosUser">Paramètre</a> <a
+											class="dropdown-item" href="login">Deconnexion</a>
 									</div>
 								</div>
 							</div>
@@ -66,17 +79,20 @@
     <legend><h4>Modifier vos information</h4></legend>
        <div class="form-group">
       <label for="nom">Nom</label>
-      <form:input type="text" class="form-control" id="nom" aria-describedby="telephoneHelp" placeholder="Entrez votre nom"></form:input>
+      <form:input type="text" class="form-control" id="nom" aria-describedby="telephoneHelp" placeholder="Entrez votre nom" path="nom"></form:input>
     </div>
     
        <div class="form-group">
       <label for="prenom">Prenom</label>
-      <form:input type="text" class="form-control" id="prenom" aria-describedby="telephonelHelp" placeholder="Entrez votre prenom"></form:input>
+      <form:input type="text" class="form-control" id="prenom" aria-describedby="telephonelHelp" placeholder="Entrez votre prenom" path="prenom"></form:input>
     </div>
+    
+
+    
     <div>
     
     <label for="files"> Modifier Votre photo</label><br>
-    <form:input id="files" type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg"></form:input>
+    <form:input id="files" type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg" path="photo"></form:input>
    
     </div>
     
@@ -84,23 +100,23 @@
        
        <div class="form-group">
       <label for="telephone">télephone</label>
-      <form:input type="tel" class="form-control" id="telephone" aria-describedby="telephonelHelp" placeholder="Entrer un numero de télephone"></form:input> 
+      <form:input type="tel" class="form-control" id="telephone" aria-describedby="telephonelHelp" placeholder="Entrer un numero de télephone" path="tel"></form:input> 
     </div>
     
     <div class="form-group">
       <label for="exampleInputEmail1">Adresse mail</label>
-      <form:input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre adresse mail"></form:input>
+      <form:input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre adresse mail" path="email"></form:input>
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     
     <div class="form-group">
       <label for="exampleInputPassword1">Mot de passe</label>
-      <form:input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></form:input>
+      <form:input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" path="mdp"></form:input>
     </div>
     
      <div class="form-group">
       <label for="exampleInputPassword1">Confirmation de mot de passe</label>
-      <form:input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></form:input>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
     </div>
     
         <form:button type="submit" class="btn btn-primary" style="margin-top: 1%;width: 500px;">Valider</form:button>

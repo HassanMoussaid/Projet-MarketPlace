@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
@@ -16,27 +17,39 @@
 		<div class="row">
 			<div class="col-12">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-					<a class="navbar-brand" href="#">Accueil</a>
-					<form:button class="navbar-toggler" type="button" data-toggle="collapse"
+					<a class="navbar-brand" href="accueil">Accueil</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
 						data-target="#navbarColor01" aria-controls="navbarColor01"
 						aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
-					</form:button>
+					</button>
 
 					<div class="collapse navbar-collapse" id="navbarColor01">
 						<ul class="navbar-nav mr-auto">
-							<li class="nav-item"><a class="nav-link" href="#">En
-									vente <span class="sr-only">(current)</span>
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Favori
-									<span class="sr-only">(current)</span>
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#"> <span
-									class="sr-only">(current)</span>Messagerie
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#"> <span
-									class="sr-only">(current)</span>Mes Objets
-							</a></li>
+								<form action="accueil" method="post">
+								<li class="nav-item">
+								<input type="submit" value="En vente">
+								</li>
+							</form>
+
+							<form action="favori" method="post">
+								<li class="nav-item"><input type="submit" value="Favori">
+								</li>
+							</form>
+							
+							<form action="Messagerie" method="post">
+								<li class="nav-item"><input type="submit" value="Messagerie">
+								</li>
+							</form>
+								<form action="ajouterObjet" method="post">
+								<li class="nav-item"><input type="submit" value="Mes Objets">
+								</li>
+							</form>
+
+							<form action="mettreEnvente" method="post">
+								<li class="nav-item"><input type="submit" value="Mettre en vente">
+								</li>
+							</form>
 						</ul>
 						<div class="form-inline my-2 my-lg-0">
 
@@ -51,8 +64,8 @@
 
 									<div class="dropdown-menu" aria-labelledby="btnGroupDrop1"
 										style="">
-										<a class="dropdown-item" href="#">Paramètre</a> <a
-											class="dropdown-item" href="#">Deconnexion</a>
+										<a class="dropdown-item" href="ModifierInfosUser">Paramètre</a> <a
+											class="dropdown-item" href="login">Deconnexion</a>
 									</div>
 								</div>
 							</div>
@@ -65,21 +78,21 @@
 		<div class="row">
 			<div class="col-4">
 				<div class="form-group">
-					<form:select class="custom-select">
-						<form:option selected="">Catégorie</form:option>
-						<form:option value="1">One</form:option>
-						<form:option value="2">Two</form:option>
-						<form:option value="3">Three</form:option>
-					</form:select>
+					<select class="custom-select">
+						<option selected="" value="">Catégorie</option>
+						<option value="1">One</option>
+						<option value="2">Two</option>
+						<option value="3">Three</option>
+					</select>
 				</div>
 			</div>
 			<div class="col-4">
 				<div class="form-group">
-					<form:select class="custom-select">
-						<form:option selected="">Trier par</form:option>
-						<form:option value="1">Prix</form:option>
-						<form:option value="2">Alphabétique</form:option>
-					</form:select>
+					<select class="custom-select">
+						<option selected="">Trier par</option>
+						<option value="1">Prix</option>
+						<option value="2">Alphabétique</option>
+					</select>
 				</div>
 			</div>
 			<div class="col-4">
@@ -91,7 +104,7 @@
 						</div>
 					</div>
 					<div class="col-6">
-						<form:button type="button" class="btn btn-primary">Rechercher</form:button>
+						<button type="button" class="btn btn-primary">Rechercher</button>
 					</div>
 
 				</div>

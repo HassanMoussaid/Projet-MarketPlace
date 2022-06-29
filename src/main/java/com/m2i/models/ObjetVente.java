@@ -42,6 +42,9 @@ public class ObjetVente {
 	@JoinColumn
 	private Categorie idCategorie;
 	
+	@Column
+	private int prix;
+	
 	public ObjetVente() {
 		
 	}
