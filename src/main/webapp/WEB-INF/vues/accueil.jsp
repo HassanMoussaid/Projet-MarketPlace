@@ -1,4 +1,5 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <head>
 <meta charset="UTF-8" />
 <title>Accueil</title>
@@ -28,7 +29,8 @@
 
 
 							<form action="accueil" method="post">
-								<li class="nav-item"><input type="submit" value="En vente">
+								<li class="nav-item">
+								<input type="submit" value="En vente">
 								</li>
 							</form>
 
@@ -36,14 +38,15 @@
 								<li class="nav-item"><input type="submit" value="Favori">
 								</li>
 							</form>
-
-							<li class="nav-item"><a class="nav-link" href="#"> <span
-									class="sr-only">(current)</span>Messagerie
-							</a></li>
-
-							<li class="nav-item"><a class="nav-link" href="#"> <span
-									class="sr-only">(current)</span>Mes Objets
-							</a></li>
+							
+							<form action="Messagerie" method="post">
+								<li class="nav-item"><input type="submit" value="Messagerie">
+								</li>
+							</form>
+								<form action="ajouterObjet" method="post">
+								<li class="nav-item"><input type="submit" value="Mes Objets">
+								</li>
+							</form>
 
 							<form action="mettreEnvente" method="post">
 								<li class="nav-item"><input type="submit" value="Mettre en vente">
@@ -64,8 +67,8 @@
 
 									<div class="dropdown-menu" aria-labelledby="btnGroupDrop1"
 										style="">
-										<a class="dropdown-item" href="#">Paramètre</a> <a
-											class="dropdown-item" href="#">Deconnexion</a>
+										<a class="dropdown-item" href="ModifierInfosUser">Paramètre</a> <a
+											class="dropdown-item" href="login">Deconnexion</a>
 									</div>
 								</div>
 							</div>

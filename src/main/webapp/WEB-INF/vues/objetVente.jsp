@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
@@ -181,7 +182,7 @@ img {
 		<div class="row">
 			<div class="col-12">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-					<a class="navbar-brand" href="#">Accueil</a>
+					<a class="navbar-brand" href="accueil">Accueil</a>
 					<form:button class="navbar-toggler" type="button" data-toggle="collapse"
 						data-target="#navbarColor01" aria-controls="navbarColor01"
 						aria-expanded="false" aria-label="Toggle navigation">
@@ -190,18 +191,30 @@ img {
 
 					<div class="collapse navbar-collapse" id="navbarColor01">
 						<ul class="navbar-nav mr-auto">
-							<li class="nav-item"><a class="nav-link" href="#">En
-									vente <span class="sr-only">(current)</span>
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#">Favori
-									<span class="sr-only">(current)</span>
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#"> <span
-									class="sr-only">(current)</span>Messagerie
-							</a></li>
-							<li class="nav-item"><a class="nav-link" href="#"> <span
-									class="sr-only">(current)</span>Mes Objets
-							</a></li>
+							<form action="accueil" method="post">
+								<li class="nav-item">
+								<input type="submit" value="En vente">
+								</li>
+							</form>
+
+							<form action="favori" method="post">
+								<li class="nav-item"><input type="submit" value="Favori">
+								</li>
+							</form>
+							
+							<form action="Messagerie" method="post">
+								<li class="nav-item"><input type="submit" value="Messagerie">
+								</li>
+							</form>
+								<form action="ajouterObjet" method="post">
+								<li class="nav-item"><input type="submit" value="Mes Objets">
+								</li>
+							</form>
+
+							<form action="mettreEnvente" method="post">
+								<li class="nav-item"><input type="submit" value="Mettre en vente">
+								</li>
+							</form>
 						</ul>
 						<div class="form-inline my-2 my-lg-0">
 
@@ -216,8 +229,8 @@ img {
 
 									<div class="dropdown-menu" aria-labelledby="btnGroupDrop1"
 										style="">
-										<a class="dropdown-item" href="#">Paramètre</a> <a
-											class="dropdown-item" href="#">Deconnexion</a>
+										<a class="dropdown-item" href="ModifierInfosUser">Paramètre</a> <a
+											class="dropdown-item" href="login">Deconnexion</a>
 									</div>
 								</div>
 							</div>
@@ -266,6 +279,9 @@ img {
 			<div class="row" >
 				<div class="col-6">
 					<p>Description</p>	
+				</div>
+				<div class="col-6">
+					<p>Categorie</p>	
 				</div>
 				<div class="col-6">
 					<img id="btnGroupDrop1" alt="image" width="100" height="75"

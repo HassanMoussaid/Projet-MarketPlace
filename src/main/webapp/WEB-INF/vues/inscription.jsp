@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
@@ -17,34 +18,42 @@
     <legend>Inscription</legend>
        <div class="form-group">
       <label for="nom">Nom</label>
-      <form:input type="text" class="form-control" id="nom" aria-describedby="telephoneHelp" placeholder="Entrez votre nom"></form:input>
+      <form:input type="text" class="form-control" id="nom" aria-describedby="telephoneHelp" placeholder="Entrez votre nom" path="nom"></form:input>
      
     </div>
        <div class="form-group">
       <label for="prenom">Prenom</label>
-      <form:input type="text" class="form-control" id="prenom" aria-describedby="telephonelHelp" placeholder="Entrez votre prenom"></form:input>
+      <form:input type="text" class="form-control" id="prenom" aria-describedby="telephonelHelp" placeholder="Entrez votre prenom" path="prenom"></form:input>
       
     </div>
        </div>
        <div class="form-group">
       <label for="telephone">télephone</label>
-      <form:input type="tel" class="form-control" id="telephone" aria-describedby="telephonelHelp" placeholder="Entrer un numero de télephone"></form:input>
+      <form:input type="tel" class="form-control" id="telephone" aria-describedby="telephonelHelp" placeholder="Entrer un numero de télephone" path="tel"></form:input>
       
     </div>
     
+     <div>
+    
+    <label for="files"> Ajouter une photo</label><br>
+    <form:input id="files" type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg" path="photo"></form:input>
+   
+    </div>
     <div class="form-group">
       <label for="exampleInputEmail1">Adresse mail</label>
-      <form:input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre adresse mail"></form:input>
+      <form:input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre adresse mail" path="email"></form:input>
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Mot de passe</label>
-      <form:input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></form:input>
+      <form:input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" path="mdp"></form:input>
     </div>
      <div class="form-group">
       <label for="exampleInputPassword1">Confirmation de mot de passe</label>
-      <form:input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></form:input>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></input>
     </div>
+    
+    
         <form:button type="submit" class="btn btn-primary" style="margin-top: 1%;width: 500px;">Valider</form:button>
   </fieldset>
 </form:form>

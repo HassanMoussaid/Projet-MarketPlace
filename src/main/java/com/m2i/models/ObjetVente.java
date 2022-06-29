@@ -39,6 +39,9 @@ public class ObjetVente {
 	@JoinColumn
 	private Categorie idCategorie;
 	
+	@Column
+	private int prix;
+	
 	public ObjetVente() {
 		
 	}
@@ -100,5 +103,15 @@ public class ObjetVente {
 	public void setIdCategorie(Categorie idCategorie) {
 		this.idCategorie = idCategorie;
 	}
+
+	public int getPrix() {
+		return prix;
+	}
+
+	public void setPrix(int prix) {
+		this.prix = prix;
+	}
+	
+	
 	
 }

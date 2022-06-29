@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.m2i.models.Categorie;
+import com.m2i.models.ObjetVente;
 import com.m2i.models.User;
 import com.m2i.service.UserService;
 
@@ -45,19 +47,22 @@ public class Controleur {
 	
 	@RequestMapping("/inscription")
 	public String inscription() {
+		
 		return"inscription";
 	}
 	
 	
 	@RequestMapping("/mettreEnvente")
-	public String mettreEnvente() {
+	public String mettreEnvente(Model mo) {
+		ObjetVente objetVente = new ObjetVente();
+		mo.addAttribute("objetVente",objetVente);
 		return"AjouterObjet";
 	}
 	
 	@RequestMapping("/ajouterObjet")
 	public String ajouterObjet() {
 		
-		return"MesObjetEnVente";
+		return"MesObjetsEnVente";
 	}
 	
 	@RequestMapping("/accueil")
@@ -68,6 +73,7 @@ public class Controleur {
 	
 	@RequestMapping("/favori")
 	public String favori() {
+		
 		
 		return"favori";
 	}
