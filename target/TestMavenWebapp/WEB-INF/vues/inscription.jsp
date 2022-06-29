@@ -27,8 +27,8 @@
     </div>
        </div>
        <div class="form-group">
-      <label for="telephone">télephone</label>
-      <input type="tel" class="form-control" id="telephone" aria-describedby="telephonelHelp" placeholder="Entrer un numero de télephone">
+      <label for="telephone">tï¿½lephone</label>
+      <input type="tel" class="form-control" id="telephone" aria-describedby="telephonelHelp" placeholder="Entrer un numero de tï¿½lephone">
       
     </div>
     

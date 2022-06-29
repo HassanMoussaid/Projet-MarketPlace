@@ -15,8 +15,7 @@ public class Photo {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@ManyToOne
-	@JoinColumn
+	@Column
 	private int id;
 	
 	@Column

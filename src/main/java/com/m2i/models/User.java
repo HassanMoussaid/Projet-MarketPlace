@@ -39,16 +39,22 @@ public class User {
 	@Column
 	private String photo;
 	
-	@OneToMany(mappedBy="idUser",cascade=CascadeType.ALL)
-	@JoinColumn
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="idUser")
 	private List<Favori> favoris;
 	
-	@OneToMany(mappedBy="idUser",cascade=CascadeType.ALL)
-	@JoinColumn
+	@OneToMany(cascade=CascadeType.ALL)
+	@JoinColumn(name="idUser")
 	private List<ObjetVente> objetVentes;
 	
 	public User() {
 		
+	}
+	
+	public User(String email, String mdp) {
+		super();
+		this.email = email;
+		this.mdp = mdp;
 	}
 
 	public User(String nom, String prenom, String tel, String email, String mdp, String photo) {
@@ -131,6 +137,14 @@ public class User {
 
 	public void setObjetVentes(List<ObjetVente> objetVentes) {
 		this.objetVentes = objetVentes;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", tel=" + tel + ", email=" + email + ", mdp="
+				+ mdp + "]";
 	}	
+	
+	
 	
 }
