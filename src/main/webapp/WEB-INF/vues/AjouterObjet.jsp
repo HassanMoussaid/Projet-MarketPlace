@@ -37,12 +37,12 @@
 			<div class="col-12">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 					<a class="navbar-brand" href="#">Accueil</a>
-					<form:button class="navbar-toggler" type="button"
+					<button class="navbar-toggler" type="button"
 						data-toggle="collapse" data-target="#navbarColor01"
 						aria-controls="navbarColor01" aria-expanded="false"
 						aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
-					</form:button>
+					<button>
 
 					<div class="collapse navbar-collapse" id="navbarColor01">
 						<ul class="navbar-nav mr-auto">
@@ -72,8 +72,8 @@
 
 									<div class="dropdown-menu" aria-labelledby="btnGroupDrop1"
 										style="">
-										<a class="dropdown-item" href="#">Paramètre</a> <a
-											class="dropdown-item" href="#">Deconnexion</a>
+										<a class="dropdown-item" href="#">Paramètre</a> 
+										<a class="dropdown-item" href="#">Deconnexion</a>
 									</div>
 								</div>
 							</div>
@@ -85,33 +85,26 @@
 
 
 		<form:form action="ajoutObjet" method="post"
-			modelAttribute="objetVente">
+			modelAttribute="objetvente">
 			<fieldset style="margin: auto; width: 700px; margin-top: 50px;">
 				<legend>
 					<strong>Déposer une annonce</strong>
 				</legend>
 				<div class="form-group">
-					<label for="titre">Quel est le titre de l'annonce ?</label> <small
-						id="emailHelp" class="form-text text-muted">champs requis</small>
+					<label for="titre">Quel est le titre de l'annonce ?</label> 
 					<br>
-					<form:input type="text" class="form-control" id="titre"
-						aria-describedby="titreHelp" placeholder="Enter un titre"
-						path="nom" />
+					<form:input type="text" class="form-control" id="titre" aria-describedby="titreHelp" placeholder="Enter un titre" path="nom" />
 				</div>
 
 				<div class="form-group">
 					<label for="exampleTextarea">Description</label>
-					<form:textarea class="form-control" id="description" rows="3"
-						path="description" />
+					<form:input type="textarea" class="form-control" id="description" rows="3" path="description" />
 				</div>
 
 				<div class="form-group">
-					<label for="titre">Quel est le titre de l'annonce ?</label> <small
-						id="emailHelp" class="form-text text-muted">champs requis</small>
+					<label for="prix">Prix de l'objet : </label> 
 					<br>
-					<form:input type="number" class="form-control" id="titre"
-						aria-describedby="titreHelp" placeholder="Enter un titre"
-						path="prix" />
+					<form:input type="number" class="form-control" id="prix"  path="prix" />
 				</div>
 
 				<div class="form-group">

@@ -1,5 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <head>
 <link
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -10,27 +10,35 @@
 
 </head>
 <body>
-	<form:form action="accueilLogin" method="post"  modelAttribute="user">
-		<fieldset style="margin: auto; width: 500px; margin-top: 100px;">
+	<fieldset style="margin: auto; width: 500px; margin-top: 100px;">
+		<form:form action="accueilLogin" method="post" modelAttribute="user">
+
 			<legend>Connexion</legend>
 			<div class="form-group">
-				<label for="exampleInputEmail1">E-mail</label> 
-				<form:input type="email" class="form-control" name="mailUser" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" path="email"/> 
-				<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				<label for="exampleInputEmail1">E-mail</label>
+				<form:input type="email" class="form-control" name="mailUser"
+					id="exampleInputEmail1" aria-describedby="emailHelp"
+					placeholder="Enter email" path="email" />
+				<small id="emailHelp" class="form-text text-muted">We'll
+					never share your email with anyone else.</small>
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">Mot de passe</label> 
-				<form:input type="password" class="form-control" name="motdepasse" id="exampleInputPassword1" placeholder="Password" path="mdp"/>
+				<label for="exampleInputPassword1">Mot de passe</label>
+				<form:input type="password" class="form-control" name="motdepasse"
+					id="exampleInputPassword1" placeholder="Password" path="mdp" />
 			</div>
 
 			<button type="submit" class="btn btn-primary"
 				style="margin-top: 0.5%; width: 500px;">Login</button>
-			<br> 
-			<label>Envie de nous rejoindre ?</label> 
-			<a href=" ">Créer un compte</a>
-		</fieldset>
+			<br>
+		</form:form>
+		<form action="inscription" method="post" >
+		<label>Envie de nous rejoindre ?</label> 
+			<input type="submit" value="Inscription">
+		</form>
+	</fieldset>
 
-	</form:form>
+
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
 		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="

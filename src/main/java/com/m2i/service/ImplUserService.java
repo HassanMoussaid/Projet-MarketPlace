@@ -17,4 +17,16 @@ public class ImplUserService implements UserService{
 		return userD.getUser(email, mdp);
 	}
 
+	@Override
+	public void addUser(User u) {
+		userD.addUser(u);
+	}
+
+	@Override
+	public void addObjetVente(User u) {
+		userD.addObjetVente(u);
+	}
+	
+	
+
 }

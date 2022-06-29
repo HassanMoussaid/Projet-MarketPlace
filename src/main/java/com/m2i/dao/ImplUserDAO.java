@@ -25,8 +25,20 @@ public class ImplUserDAO  implements UserDAO{
 				return luser.get(i);
 			}
 		}
-
 		return null;
+	}
+
+	@Override
+	public void addUser(User u) {
+		Session s = sf.getCurrentSession();
+		s.save(u);
+	}
+
+	@Override
+	public void addObjetVente(User u) {
+		Session s = sf.getCurrentSession();
+		s.update(u);
+		
 	}
 
 }

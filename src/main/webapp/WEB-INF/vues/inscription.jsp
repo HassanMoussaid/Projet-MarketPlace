@@ -1,4 +1,6 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <head>
 <meta charset="UTF-8" />
 <title>Inscription</title>
@@ -12,39 +14,36 @@
 </head>
 <body>
 
-<form:form>
+<form:form action="valideInscription" method="post"  modelAttribute="user">
   <fieldset style="margin: auto; width: 500px; margin-top: 100px;">
     <legend>Inscription</legend>
        <div class="form-group">
       <label for="nom">Nom</label>
-      <form:input type="text" class="form-control" id="nom" aria-describedby="telephoneHelp" placeholder="Entrez votre nom"></form:input>
+      <form:input type="text" class="form-control" id="nom" aria-describedby="telephoneHelp" placeholder="Entrez votre nom" path="nom"/>
      
     </div>
        <div class="form-group">
       <label for="prenom">Prenom</label>
-      <form:input type="text" class="form-control" id="prenom" aria-describedby="telephonelHelp" placeholder="Entrez votre prenom"></form:input>
+      <form:input type="text" class="form-control" id="prenom" aria-describedby="telephonelHelp" placeholder="Entrez votre prenom" path="prenom"/>
       
     </div>
        </div>
        <div class="form-group">
       <label for="telephone">télephone</label>
-      <form:input type="tel" class="form-control" id="telephone" aria-describedby="telephonelHelp" placeholder="Entrer un numero de télephone"></form:input>
+      <form:input type="tel" class="form-control" id="telephone" aria-describedby="telephonelHelp" placeholder="Entrer un numero de télephone" path="tel"/>
       
     </div>
     
     <div class="form-group">
       <label for="exampleInputEmail1">Adresse mail</label>
-      <form:input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre adresse mail"></form:input>
+      <form:input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre adresse mail" path="email"/>
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Mot de passe</label>
-      <form:input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></form:input>
+      <form:input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" path="mdp"/>
     </div>
-     <div class="form-group">
-      <label for="exampleInputPassword1">Confirmation de mot de passe</label>
-      <form:input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></form:input>
-    </div>
+ 
         <form:button type="submit" class="btn btn-primary" style="margin-top: 1%;width: 500px;">Valider</form:button>
   </fieldset>
 </form:form>

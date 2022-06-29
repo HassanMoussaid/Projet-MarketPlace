@@ -28,6 +28,9 @@ public class ObjetVente {
 	@Column
 	private String description;
 	
+	@Column
+	private int prix;
+	
 	@ManyToOne
 	@JoinColumn
 	private User idUser;
@@ -49,6 +52,15 @@ public class ObjetVente {
 		this.nom = nom;
 		this.description = description;
 		this.idUser = idUser;
+		this.photos = photos;
+		this.idCategorie = idCategorie;
+	}
+
+	public ObjetVente(String nom, String description, int prix, List<Photo> photos, Categorie idCategorie) {
+		super();
+		this.nom = nom;
+		this.description = description;
+		this.prix = prix;
 		this.photos = photos;
 		this.idCategorie = idCategorie;
 	}
@@ -100,5 +112,15 @@ public class ObjetVente {
 	public void setIdCategorie(Categorie idCategorie) {
 		this.idCategorie = idCategorie;
 	}
+
+	public int getPrix() {
+		return prix;
+	}
+
+	public void setPrix(int prix) {
+		this.prix = prix;
+	}
+	
+	
 	
 }

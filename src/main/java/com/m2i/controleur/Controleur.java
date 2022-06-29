@@ -1,6 +1,7 @@
 package com.m2i.controleur;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.m2i.models.ObjetVente;
 import com.m2i.models.User;
 import com.m2i.service.UserService;
 
@@ -39,23 +41,43 @@ public class Controleur {
 	@RequestMapping("/accueilLogin")
 	public String accueilLogin(HttpServletRequest request, Model mo, @Valid @ModelAttribute("user") User user) {
 		User u = userS.getUser(user.getEmail(), user.getMdp());
-		u.toString();
+		HttpSession s = request.getSession();
+		s.setAttribute("user", u);
 		return"accueil";
 	}
 	
 	@RequestMapping("/inscription")
-	public String inscription() {
+	public String inscription(Model mo) {
+		User user= new User();
+		mo.addAttribute("user", user);
 		return"inscription";
 	}
 	
+	@Transactional
+	@RequestMapping("/valideInscription")
+	public String valideInscription(HttpServletRequest request, Model mo, @Valid @ModelAttribute("user") User user) {
+		userS.addUser(user);
+		
+		return"accueil";
+	}
 	
 	@RequestMapping("/mettreEnvente")
-	public String mettreEnvente() {
+	public String mettreEnvente(Model mo,HttpServletRequest request) {
+		HttpSession s = request.getSession();
+		User u = (User) s.getAttribute("user");
+		
+		ObjetVente objetvente = new ObjetVente();
+		mo.addAttribute("objetvente", objetvente);
 		return"AjouterObjet";
 	}
 	
+	@Transactional
 	@RequestMapping("/ajouterObjet")
-	public String ajouterObjet() {
+	public String ajouterObjet(HttpServletRequest request, Model mo, @Valid @ModelAttribute("objetvente") ObjetVente objetvente) {
+		HttpSession s = request.getSession();
+		User u = (User) s.getAttribute("user");
+		u.getObjetVentes().add(objetvente);
+		s.setAttribute("user", u);
 		
 		return"MesObjetEnVente";
 	}
