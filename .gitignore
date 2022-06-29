@@ -62,3 +62,4 @@ target/m2e-wtp/web-resources/META-INF/maven/com.m2i.projectMavenWebapp/TestMaven
 target/classes/com/m2i/controleur/Controleur.class
 target/m2e-wtp/web-resources/META-INF/maven/com.m2i/Marketplace/pom.xml
 target/m2e-wtp/web-resources/META-INF/maven/com.m2i/Marketplace/pom.properties
+pom.xml

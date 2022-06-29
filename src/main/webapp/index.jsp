@@ -1,2 +1,2 @@
-<% response.sendRedirect("Inscription"); %>
+<% response.sendRedirect("login"); %>
 
