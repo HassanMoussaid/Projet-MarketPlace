@@ -25,30 +25,31 @@
 
 					<div class="collapse navbar-collapse" id="navbarColor01">
 						<ul class="navbar-nav mr-auto">
-							
 
-								<form action="accueil" method="post">
-								<li class="nav-item">
-								<input type="submit"  value="En vente" >
+
+							<form action="accueil" method="post">
+								<li class="nav-item"><input type="submit" value="En vente">
 								</li>
 							</form>
-							
+
 							<form action="favori" method="post">
-								<li class="nav-item">
-								<input type="submit"  value="Favori" >
+								<li class="nav-item"><input type="submit" value="Favori">
 								</li>
 							</form>
-							
-							<li class="nav-item"><a class="nav-link" href="#"> 
-							<span class="sr-only">(current)</span>Messagerie
-							</a>
-							</li>
-							
+
+							<li class="nav-item"><a class="nav-link" href="#"> <span
+									class="sr-only">(current)</span>Messagerie
+							</a></li>
+
 							<li class="nav-item"><a class="nav-link" href="#"> <span
 									class="sr-only">(current)</span>Mes Objets
-							</a>
-							</li>
-							
+							</a></li>
+
+							<form action="mettreEnvente" method="post">
+								<li class="nav-item"><input type="submit" value="Mettre en vente">
+								</li>
+							</form>
+
 						</ul>
 						<div class="form-inline my-2 my-lg-0">
 

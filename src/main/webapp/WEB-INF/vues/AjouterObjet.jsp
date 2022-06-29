@@ -1,27 +1,28 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8" />
 
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.11.1/themes/ui-lightness/jquery-ui.css" />
+<link rel="stylesheet"
+	href="https://code.jquery.com/ui/1.11.1/themes/ui-lightness/jquery-ui.css" />
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
 <title>Ajouter un objet</title>
 <style>
-
-#result{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  padding: 10px 0;
+#result {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	padding: 10px 0;
 }
 
 .thumbnail {
-  height: 192px;
+	height: 192px;
 }
-
 </style>
 <link
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
@@ -36,9 +37,10 @@
 			<div class="col-12">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 					<a class="navbar-brand" href="#">Accueil</a>
-					<form:button class="navbar-toggler" type="button" data-toggle="collapse"
-						data-target="#navbarColor01" aria-controls="navbarColor01"
-						aria-expanded="false" aria-label="Toggle navigation">
+					<form:button class="navbar-toggler" type="button"
+						data-toggle="collapse" data-target="#navbarColor01"
+						aria-controls="navbarColor01" aria-expanded="false"
+						aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
 					</form:button>
 
@@ -82,7 +84,8 @@
 		</div>
 
 
-		<form:form>
+		<form:form action="ajoutObjet" method="post"
+			modelAttribute="objetVente">
 			<fieldset style="margin: auto; width: 700px; margin-top: 50px;">
 				<legend>
 					<strong>Déposer une annonce</strong>
@@ -90,23 +93,36 @@
 				<div class="form-group">
 					<label for="titre">Quel est le titre de l'annonce ?</label> <small
 						id="emailHelp" class="form-text text-muted">champs requis</small>
-					<br> <form:input type="text" class="form-control" id="titre"
-						aria-describedby="titreHelp" placeholder="Enter un titre"></form:input>
+					<br>
+					<form:input type="text" class="form-control" id="titre"
+						aria-describedby="titreHelp" placeholder="Enter un titre"
+						path="nom" />
 				</div>
 
 				<div class="form-group">
 					<label for="exampleTextarea">Description</label>
-					<form:textarea class="form-control" id="description" rows="3"></form:textarea>
+					<form:textarea class="form-control" id="description" rows="3"
+						path="description" />
 				</div>
 
+				<div class="form-group">
+					<label for="titre">Quel est le titre de l'annonce ?</label> <small
+						id="emailHelp" class="form-text text-muted">champs requis</small>
+					<br>
+					<form:input type="number" class="form-control" id="titre"
+						aria-describedby="titreHelp" placeholder="Enter un titre"
+						path="prix" />
+				</div>
 
 				<div class="form-group">
-				
-				  <label for="files">Ajouter les photos de votre objet. Selectionnez 1 ou plusieurs</label><br>
-                  <form:input id="files" type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg"></form:input>
-                  <output id="result">
-				
-				<script type="text/javascript">
+
+					<label for="files">Ajouter les photos de votre objet.
+						Selectionnez 1 ou plusieurs</label><br>
+					<form:input id="files" type="file" multiple="multiple"
+						accept="image/jpeg, image/png, image/jpg" path="photos" />
+					<output id="result">
+
+						<script type="text/javascript">
 				document.querySelector("#files").addEventListener("change", (e) => { //ajouter un evenemet sur input file
 					  if (window.File && window.FileReader && window.FileList && window.Blob) { //tester si le format est supporter
 					    const files = e.target.files; //FILE LIST OBJECT CONTAINING UPLOADED FILES
@@ -132,24 +148,22 @@
 					});
 				
 				</script>
-				</div>		
-					<form:button type="submit" class="btn btn-primary"
-					style="margin-top: 1%; width: 700px;">Valider</form:button>
 				</div>
+				<form:button type="submit" class="btn btn-primary"
+					style="margin-top: 1%; width: 700px;">Valider</form:button>
 
-
-			
 			</fieldset>
 		</form:form>
+	</div>
 
-	
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.1/cjs/popper.min.js"
-			integrity="sha256-T3bYsIPyOLpEfeZOX4M7J59ZoDMzuYFUsPiSN3Xcc2M="
-			crossorigin="anonymous"></script>
-		<script
-			src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-			integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-			crossorigin="anonymous"></script>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.1/cjs/popper.min.js"
+		integrity="sha256-T3bYsIPyOLpEfeZOX4M7J59ZoDMzuYFUsPiSN3Xcc2M="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+		integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+		crossorigin="anonymous"></script>
 </body>
 </html>

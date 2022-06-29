@@ -48,6 +48,18 @@ public class Controleur {
 		return"inscription";
 	}
 	
+	
+	@RequestMapping("/mettreEnvente")
+	public String mettreEnvente() {
+		return"AjouterObjet";
+	}
+	
+	@RequestMapping("/ajouterObjet")
+	public String ajouterObjet() {
+		
+		return"MesObjetEnVente";
+	}
+	
 	@RequestMapping("/accueil")
 	public String accueil() {
 		
