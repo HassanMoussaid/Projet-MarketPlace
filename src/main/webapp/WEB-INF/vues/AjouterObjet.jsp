@@ -36,11 +36,11 @@
 			<div class="col-12">
 				<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 					<a class="navbar-brand" href="#">Accueil</a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse"
+					<form:button class="navbar-toggler" type="button" data-toggle="collapse"
 						data-target="#navbarColor01" aria-controls="navbarColor01"
 						aria-expanded="false" aria-label="Toggle navigation">
 						<span class="navbar-toggler-icon"></span>
-					</button>
+					</form:button>
 
 					<div class="collapse navbar-collapse" id="navbarColor01">
 						<ul class="navbar-nav mr-auto">
@@ -82,7 +82,7 @@
 		</div>
 
 
-		<form>
+		<form:form>
 			<fieldset style="margin: auto; width: 700px; margin-top: 50px;">
 				<legend>
 					<strong>Déposer une annonce</strong>
@@ -90,20 +90,20 @@
 				<div class="form-group">
 					<label for="titre">Quel est le titre de l'annonce ?</label> <small
 						id="emailHelp" class="form-text text-muted">champs requis</small>
-					<br> <input type="text" class="form-control" id="titre"
-						aria-describedby="titreHelp" placeholder="Enter un titre">
+					<br> <form:input type="text" class="form-control" id="titre"
+						aria-describedby="titreHelp" placeholder="Enter un titre"></form:input>
 				</div>
 
 				<div class="form-group">
 					<label for="exampleTextarea">Description</label>
-					<textarea class="form-control" id="description" rows="3"></textarea>
+					<form:textarea class="form-control" id="description" rows="3"></form:textarea>
 				</div>
 
 
 				<div class="form-group">
 				
 				  <label for="files">Ajouter les photos de votre objet. Selectionnez 1 ou plusieurs</label><br>
-                  <input id="files" type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg">
+                  <form:input id="files" type="file" multiple="multiple" accept="image/jpeg, image/png, image/jpg"></form:input>
                   <output id="result">
 				
 				<script type="text/javascript">
@@ -133,14 +133,14 @@
 				
 				</script>
 				</div>		
-					<button type="submit" class="btn btn-primary"
-					style="margin-top: 1%; width: 700px;">Valider</button>
+					<form:button type="submit" class="btn btn-primary"
+					style="margin-top: 1%; width: 700px;">Valider</form:button>
 				</div>
 
 
 			
 			</fieldset>
-		</form>
+		</form:form>
 
 	
 		<script

@@ -134,7 +134,7 @@
 						<p>Prix</p>
 					</div>
 					<div class="col-1">
-						<button type="button" class="btn btn-info">Delete</button>
+						<form:button type="button" class="btn btn-info">Delete</form:button>
 					</div>
 				</div>
 			</a>

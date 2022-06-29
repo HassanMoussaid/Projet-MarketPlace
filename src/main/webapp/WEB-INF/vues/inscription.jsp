@@ -12,36 +12,42 @@
 </head>
 <body>
 
-<form>
+<form:form>
   <fieldset style="margin: auto; width: 500px; margin-top: 100px;">
     <legend>Inscription</legend>
        <div class="form-group">
-      <label for="exampleInputEmail1">Nom</label>
-      <input type="text" class="form-control" id="nom" aria-describedby="emailHelp" placeholder="Enter nom">
+      <label for="nom">Nom</label>
+      <form:input type="text" class="form-control" id="nom" aria-describedby="telephoneHelp" placeholder="Entrez votre nom"></form:input>
      
     </div>
        <div class="form-group">
-      <label for="exampleInputEmail1">Prenom</label>
-      <input type="text" class="form-control" id="prenom" aria-describedby="emailHelp" placeholder="Enter prenom">
+      <label for="prenom">Prenom</label>
+      <form:input type="text" class="form-control" id="prenom" aria-describedby="telephonelHelp" placeholder="Entrez votre prenom"></form:input>
+      
+    </div>
+       </div>
+       <div class="form-group">
+      <label for="telephone">télephone</label>
+      <form:input type="tel" class="form-control" id="telephone" aria-describedby="telephonelHelp" placeholder="Entrer un numero de télephone"></form:input>
       
     </div>
     
     <div class="form-group">
       <label for="exampleInputEmail1">Adresse mail</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <form:input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre adresse mail"></form:input>
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Mot de passe</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <form:input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></form:input>
     </div>
      <div class="form-group">
       <label for="exampleInputPassword1">Confirmation de mot de passe</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <form:input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"></form:input>
     </div>
-        <button type="submit" class="btn btn-primary" style="margin-top: 1%;width: 500px;">Valider</button>
+        <form:button type="submit" class="btn btn-primary" style="margin-top: 1%;width: 500px;">Valider</form:button>
   </fieldset>
-</form>
+</form:form>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"
 		integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="

@@ -231,14 +231,12 @@ img {
 			<div class="row" >
 			<div class="col-md-4 ml-auto mr-auto">
 			</div>
-				<div class="col-md-4 ml-auto mr-auto">
-					<h4 class="text-center">Titre</h4>
+				<div class="col-md-6 ml-auto mr-auto">
+					<label for="titre"><h3>Titre</h3></label>
+					<form:input type="text" class="form-control" id="titre"
+						aria-describedby="titreHelp" placeholder="Enter un titre"></form:input>
 				</div>
-				<div class="col-4">
-					<div class="text-right">
-						<button type="button" class="btn btn-primary text-right">Favori</button>
-					</div>
-				</div>
+				<br>
 			</div>
 			<div class="row">
 				<div class="col-12">
@@ -252,12 +250,15 @@ img {
 						<input id="carou_quatre" name="rotation" type="radio"> 
 						<label for="carou_quatre"></label>
 						<div class="contenu_carou">
-							<div class="caroussel">
+							<div class="caroussel" id="x">
+							
 								<img src="https://www.consoglobe.com/wp-content/uploads/2021/11/chat-maison_2079791452_ban.jpg" alt=""> 
 								<img src="https://www.consoglobe.com/wp-content/uploads/2021/11/chat-maison_2079791452_ban.jpg" alt=""> 
 								<img src="https://www.consoglobe.com/wp-content/uploads/2021/11/chat-maison_2079791452_ban.jpg" alt=""> 
-								<img src="https://www.consoglobe.com/wp-content/uploads/2021/11/chat-maison_2079791452_ban.jpg" alt="">
+								
 							</div>
+							
+					
 						</div>
 						
 					</div>
@@ -265,15 +266,10 @@ img {
 			</div>	
 			<div class="row" >
 				<div class="col-6">
-					<p>Description</p>	
+					<label for="exampleTextarea">Description</label>
+					<textarea class="form-control" id="description" rows="3"></textarea>
 				</div>
-				<div class="col-6">
-					<img id="btnGroupDrop1" alt="image" width="100" height="75"
-						src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Breezeicons-actions-22-im-user.svg/1200px-Breezeicons-actions-22-im-user.svg.png">
-					<p>Nom prenom</p>
-					<p>Tel</p>
-					<button type="button" class="btn btn-primary">Message</button>
-				</div>
+			
 			</div>
 			<br>
 		</div>
